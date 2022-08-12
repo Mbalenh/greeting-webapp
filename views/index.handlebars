@@ -3,7 +3,7 @@
         <form action="/greeted" class="greeting" method="POST">
             <p>Enter Your Name</p>
             <div class="greetingName">
-            <input class="name" type="text" name="fullname" placeholder="Full Name">
+            <input class="name {{username}}" type="text" name="fullname" placeholder="Full Name">
             <p><span class ="count">{{count}}</span></p>
             </div>
             
@@ -13,7 +13,7 @@
                 <input type="radio" name="language" class="radio radioIsiXhosa" value="isixhosa"> IsiXhosa
                 <div class="buttonGreeting">
                     <button class="button-primary greetMeAdd" type="submit" name="button">Greet Me</button>
-                    {{!-- <button class="button-primary clear" type="button" name="button">clear</button> --}}
+                    <button class="button-primary clear" type="submit" name="button">clear</button>
                 </div>
                 </div>
                 <p><span class ="display">{{message}} </span></p>

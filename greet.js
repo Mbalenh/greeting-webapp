@@ -7,18 +7,13 @@ function addName(username, language){
   if(username === ""){
     return
   }
- else if(nameArray.includes(username)){
-    return
-  }
-   else if(language === null){
+   else if(language === ""){
     return
   }
   else if(/[0-9]/.test(username)){
    return
   }
  
-    nameArray.push(username);
-
 }
 
 function greet(username, language){
@@ -30,12 +25,9 @@ function greet(username, language){
      
       return "invalid username"
     }
-    if(nameArray.includes(username)){
-      return
-    }
-    
-    if(language !== null){
-      nameArray.push(username)
+   
+    if(language != undefined){
+      nameArray.push(username);
     if(language ==="english"){
    
        return "Hello, " +  username;
@@ -49,11 +41,10 @@ function greet(username, language){
        return "Molo, " +  username;  
      }
 }else{
-  
   return "please select language"
 }
-}
 
+}
 
 return{
     addName,
