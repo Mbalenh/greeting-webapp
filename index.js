@@ -29,13 +29,14 @@ app.get('/', function (req, res) {
  let name = greeting.username
  let language = greeting.language
 let message= greeting.greet(name,language)
-let clear= greeting.clearArray()
+// let clear= greeting.clearArray()
 // let messages= greeting.errorMessage(name,language)
   greeting.username =""
   greeting.language=""
     res.render('index' ,{
     message: message,
-      count:  greeting.getCounter()
+      count:  greeting.getCounter(),
+      // clear: clear
       // count: greeting.addName(name, language)
     });  
 });
