@@ -105,3 +105,7 @@ button:hover{
 .clear{
     margin-left: 5px;
 }
+.error {
+  color: crimson;
+  font-weight: bold;
+}
