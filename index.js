@@ -40,6 +40,11 @@ let message= greeting.greet(name,language)
       // count: greeting.addName(name, language)
     });  
 });
+app.post('/clear', function (req, res) {
+ greeting.clearArray()
+  
+res.redirect('/');
+}); 
 
 app.post('/greeted', function(req, res){
     let error = greeting.errorMessage(req.body.fullname,req.body.language)
@@ -54,10 +59,20 @@ app.post('/greeted', function(req, res){
 res.redirect('/');
 });
 
+app.get('/greeted' , function(req,res){
+  let names= greeting.getNames()
+  console.log(names)
+res.render('greeted',{
+  names
+})
+})
+
 app.get('/counter/:username', function(req, res){
-  let user = req.params.user;
-  res.render('counter',{user, nameArray})
-  res.redirect('/');
+  let user = req.params.username;
+  let counter= greeting.counterName(user)
+
+  res.render('counter',{user, counter})
+  
   });
 
 

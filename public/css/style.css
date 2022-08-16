@@ -109,3 +109,16 @@ button:hover{
   color: crimson;
   font-weight: bold;
 }
+nav .nav-list{
+    list-style: none;
+
+}
+nav .nav-list li{
+    display: inline-block;
+}
+nav .nav-list li a{
+    display: inline-block;
+    color:#eee;
+    margin-left: 55px;
+    font-size: 15px;
+    font-weight:600 ;

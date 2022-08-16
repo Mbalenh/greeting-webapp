@@ -2,10 +2,8 @@ module.exports = function Greeting(array) {
   var nameArray = array || [];
   let username = "";
   let language = "";
-  
-
   function greet(username, language) {
-    nameArray.push(username);
+    
     if (language === "english") {
 
       return "Hello, " + username;
@@ -20,6 +18,20 @@ module.exports = function Greeting(array) {
     }
 
 
+  }
+  function getNames(){
+    let names = {}
+    for (let name of nameArray) {
+if(/^[a-zA-Z]+$/.test(name)){
+      if (names[name] === undefined) {
+        names[name] = 1
+      } else {
+        names[name]++
+      }
+    }
+  }
+    // console.log(names);
+    return Object.keys(names)
   }
 
   function errorMessage(username, language) {
@@ -41,6 +53,7 @@ module.exports = function Greeting(array) {
   }
   
   function getCounter() {
+    console.log(nameArray)
     let names = {}
     for (let name of nameArray) {
 if(/^[a-zA-Z]+$/.test(name)){
@@ -53,6 +66,20 @@ if(/^[a-zA-Z]+$/.test(name)){
   }
     // console.log(names);
     return Object.keys(names).length
+  }
+   function counterName(user) {
+    let names = {}
+    for (let name of nameArray) {
+if(/^[a-zA-Z]+$/.test(name)){
+      if (names[name] === undefined) {
+        names[name] = 1
+      } else {
+        names[name]++
+      }
+    }
+  }
+    // console.log(names);
+    return names[user]
   }
 
   function clearArray() {
@@ -67,7 +94,9 @@ if(/^[a-zA-Z]+$/.test(name)){
     language,
     getCounter,
     errorMessage,
-     clearArray
+     clearArray,
+     getNames,
+     counterName
 
   }
 }
