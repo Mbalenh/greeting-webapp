@@ -1,7 +1,9 @@
 module.exports = function Greeting(array) {
-  var nameArray = array || [];
+  // var nameArray = array || [];
   let username = "";
   let language = "";
+ let names = {}
+
   function greet(username, language) {
     
     if (language === "english") {
@@ -19,9 +21,10 @@ module.exports = function Greeting(array) {
 
 
   }
-  function getNames(){
-    let names = {}
-    for (let name of nameArray) {
+
+  function insertNames(name){
+    // let names = {}
+    // for (let name of nameArray) {
 if(/^[a-zA-Z]+$/.test(name)){
       if (names[name] === undefined) {
         names[name] = 1
@@ -29,10 +32,15 @@ if(/^[a-zA-Z]+$/.test(name)){
         names[name]++
       }
     }
-  }
+  // }
     // console.log(names);
-    return Object.keys(names)
+    // return Object.keys(names)
   }
+
+function getNames(){
+return Object.keys(names)
+}
+
 
   function errorMessage(username, language) {
     // console.log(username, language);
@@ -53,32 +61,11 @@ if(/^[a-zA-Z]+$/.test(name)){
   }
   
   function getCounter() {
-    console.log(nameArray)
-    let names = {}
-    for (let name of nameArray) {
-if(/^[a-zA-Z]+$/.test(name)){
-      if (names[name] === undefined) {
-        names[name] = 1
-      } else {
-        names[name]++
-      }
-    }
-  }
-    // console.log(names);
+   
     return Object.keys(names).length
   }
    function counterName(user) {
-    let names = {}
-    for (let name of nameArray) {
-if(/^[a-zA-Z]+$/.test(name)){
-      if (names[name] === undefined) {
-        names[name] = 1
-      } else {
-        names[name]++
-      }
-    }
-  }
-    // console.log(names);
+   
     return names[user]
   }
 

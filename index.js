@@ -46,13 +46,14 @@ app.post('/clear', function (req, res) {
 res.redirect('/');
 }); 
 
-app.post('/greeted', function(req, res){
+app.post('/greeting', function(req, res){
     let error = greeting.errorMessage(req.body.fullname,req.body.language)
     if (error) {
        req.flash('info', error)
     }else{
       greeting.username = req.body.fullname
       greeting.language = req.body.language
+      greeting.insertNames(req.body.fullname)
     }
  
 
